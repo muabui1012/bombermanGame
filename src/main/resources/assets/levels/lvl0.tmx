@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="9" height="9" tilewidth="48" tileheight="48" infinite="0" nextlayerid="3" nextobjectid="8">
+ <tileset firstgid="1" name="bbm" tilewidth="48" tileheight="48" tilecount="256" columns="16">
+  <image source="../textures/classic.png" width="768" height="768"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="9" height="9">
+  <data encoding="csv">
+6,6,6,6,6,6,6,6,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,6,6,6,6,6,6,6,6
+</data>
+ </layer>
+ <objectgroup id="2" name="surround">
+  <object id="1" type="surround" x="0" y="-1" width="382" height="46"/>
+  <object id="5" type="surround" x="384" y="-1" width="48" height="383"/>
+  <object id="6" type="surround" x="47" y="383" width="385" height="51"/>
+  <object id="7" type="surround" x="1" y="46" width="43" height="388"/>
+ </objectgroup>
+</map>

@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit" />
+    <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/Constants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/BlockComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/BombComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/PlayerComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/classic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/sprites.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/FXGL-08-Oct-2022-21.00.20.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/level/lvl0.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/lvl0.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/classic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/classic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/ground.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/ground.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,11 +50,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/OOP/game/src/main/resources/assets/levels",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OOP\game\src\main\resources\assets\levels" />
+      <recent name="D:\OOP\game\src\main\resources\assets\textures" />
+      <recent name="D:\OOP\game\src\main\resources\assets" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

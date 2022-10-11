@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="9" height="9" tilewidth="48" tileheight="48" infinite="0" nextlayerid="5" nextobjectid="56">
+ <tileset firstgid="1" name="classic" tilewidth="48" tileheight="48" tilecount="256" columns="16">
+  <image source="classic.png" trans="ff00ff" width="768" height="768"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="9" height="9">
+  <data encoding="csv">
+6,6,6,6,6,6,6,6,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,6,
+6,6,6,6,6,6,6,6,6
+</data>
+ </layer>
+ <objectgroup id="2" name="Object Layer 1">
+  <object id="51" type="Player" x="51" y="54" width="40" height="36"/>
+ </objectgroup>
+ <objectgroup id="3" name="walls" offsetx="96" offsety="0">
+  <object id="53" type="wall" x="-95" y="-1" width="429" height="46"/>
+  <object id="54" type="wall" x="-97" y="0" width="46" height="431"/>
+ </objectgroup>
+</map>
