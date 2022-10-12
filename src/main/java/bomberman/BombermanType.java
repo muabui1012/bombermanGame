@@ -4,10 +4,16 @@ package bomberman;
  * @author nghia
  */
 public enum BombermanType {
-    PLAYER, WALL, SURROUND, BLOCK,
-    BRICK, BRICK_BREAK,
+    PLAYER,
+    WALL,
+    WALL_BOMB,
+    SURROUND,
+    BLOCK,
+    BRICK,
+    BRICK_BREAK,
     POWERUP,
     BOMB,
-    FLAME
+    FLAME,
+    ENEMY
 
 }

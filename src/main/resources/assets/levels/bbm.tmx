@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="31" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="10" nextobjectid="618">
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="17" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="14" nextobjectid="631">
  <tileset firstgid="1" name="classic" tilewidth="48" tileheight="48" tilecount="256" columns="16">
   <image source="../../../../../../../bomberman/chepvjp/BombermanOOP/src/main/resources/assets/levels/classic.png" trans="ff00ff" width="768" height="768"/>
  </tileset>
- <layer id="1" name="Tile Layer 1" width="31" height="15" locked="1">
+ <layer id="1" name="Tile Layer 1" width="17" height="15">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
-6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,7,7,6,
-6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
-6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
-6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
-6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
-6,6,6,7,6,7,6,7,6,7,6,6,6,7,6,7,6,7,6,6,6,7,6,7,6,7,6,7,6,6,6,
-6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
-6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
-6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
-6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
-6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,7,7,7,7,6,
-6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,
+6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
+6,6,6,7,6,7,6,7,6,7,6,6,6,7,6,7,6,
+6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,
+6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,7,6,
+6,7,7,7,7,7,7,7,7,7,6,7,7,7,7,7,6,
+6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6
 </data>
  </layer>
+ <objectgroup id="12" name="Player">
+  <object id="629" type="Player" x="53.3333" y="149.333" width="37.3333" height="40"/>
+  <object id="630" type="balloon" x="290.667" y="150.667" width="44" height="37.3333">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup id="13" name="Enemy"/>
  <objectgroup id="2" name="Walls">
   <object id="333" type="wall" x="96" y="192" width="48" height="48">
    <ellipse/>
@@ -107,12 +114,6 @@
   <object id="604" type="wall" x="480" y="144" width="48" height="48">
    <ellipse/>
   </object>
-  <object id="605" type="wall" x="960" y="144" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="606" type="wall" x="960" y="624" width="48" height="48">
-   <ellipse/>
-  </object>
   <object id="358" type="wall" x="576" y="576" width="48" height="48">
    <ellipse/>
   </object>
@@ -146,128 +147,22 @@
   <object id="367" type="wall" x="672" y="576" width="48" height="48">
    <ellipse/>
   </object>
-  <object id="368" type="wall" x="768" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="369" type="wall" x="768" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="370" type="wall" x="768" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="371" type="wall" x="768" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="372" type="wall" x="768" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="373" type="wall" x="864" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="374" type="wall" x="864" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="375" type="wall" x="864" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="376" type="wall" x="864" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="377" type="wall" x="864" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="379" type="wall" x="960" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="380" type="wall" x="960" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="381" type="wall" x="960" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="608" type="wall" x="912" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="382" type="wall" x="960" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="384" type="wall" x="960" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="385" type="wall" x="1056" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="386" type="wall" x="1056" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="387" type="wall" x="1056" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="388" type="wall" x="1056" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="389" type="wall" x="1056" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="390" type="wall" x="1152" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="391" type="wall" x="1152" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="392" type="wall" x="1152" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="393" type="wall" x="1152" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="394" type="wall" x="1152" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="395" type="wall" x="1248" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="396" type="wall" x="1248" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="397" type="wall" x="1248" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="398" type="wall" x="1248" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="399" type="wall" x="1248" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="400" type="wall" x="1344" y="576" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="401" type="wall" x="1344" y="480" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="402" type="wall" x="1344" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="609" type="wall" x="1392" y="384" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="403" type="wall" x="1344" y="288" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="404" type="wall" x="1344" y="192" width="48" height="48">
-   <ellipse/>
-  </object>
-  <object id="615" type="Player" x="337.333" y="336" width="46.6667" height="42.6667"/>
   <object id="616" type="brick" x="334.667" y="242.667" width="49.3333" height="45.3333"/>
   <object id="617" type="brick" x="142.667" y="429.333" width="48" height="48"/>
  </objectgroup>
- <objectgroup id="4" name="Around Walls" locked="1">
+ <objectgroup id="4" name="Around Walls">
   <object id="414" type="surround" x="0" y="96" width="48" height="624"/>
   <object id="415" type="surround" x="48" y="96" width="1392" height="48"/>
-  <object id="416" type="surround" x="1440" y="96" width="48" height="624"/>
   <object id="417" type="surround" x="48" y="672" width="1392" height="48"/>
+  <object id="620" type="surround" x="768" y="97.3333" width="44" height="622.667"/>
  </objectgroup>
  <objectgroup id="8" name="Brick">
   <object id="613" type="brick" x="48.6667" y="237.333" width="47.3333" height="49.3333"/>
+  <object id="621" type="brick" x="142.667" y="146.667" width="45.3333" height="44"/>
+  <object id="623" type="brick" x="238.667" y="242.667" width="46.6667" height="42.6667"/>
+  <object id="625" type="brick" x="241.333" y="526.667" width="42.6667" height="42.6667"/>
+  <object id="626" type="brick" x="432" y="526.667" width="42.6667" height="44"/>
+  <object id="627" type="brick" x="432" y="240" width="46.6667" height="46.6667"/>
+  <object id="628" type="brick" x="624" y="528" width="42.6667" height="46.6667"/>
  </objectgroup>
 </map>

@@ -1,5 +1,6 @@
 package bomberman.components;
 
+import bomberman.BombermanType;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
 import com.almasb.fxgl.entity.SpawnData;
@@ -25,7 +26,16 @@ public class BombComponent extends Component {
     private AnimatedTexture texture;
     private AnimationChannel anim;
 
+
+    Entity wallBomb;
     public BombComponent() {
+        onCollisionEnd(BombermanType.BOMB, BombermanType.PLAYER, (b, p) -> {
+            if (entity != null) {
+                wallBomb = FXGL.spawn("wall_bomb", new SpawnData(entity.getX(), entity.getY()));
+            }
+        });
+
+
         anim = new AnimationChannel(image("sprites.png"), 16, SIZE_BLOCK, SIZE_BLOCK,
                 Duration.seconds(0.7), 72, 74);
         texture = new AnimatedTexture(anim);
@@ -77,6 +87,8 @@ public class BombComponent extends Component {
                 e.removeFromWorld();
             }
         }, Duration.seconds(0.2));
+        if (wallBomb != null) wallBomb.removeFromWorld();
+        entity.removeFromWorld();
     }
 
 }

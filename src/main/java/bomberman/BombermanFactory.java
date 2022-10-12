@@ -21,6 +21,7 @@ import com.almasb.fxgl.physics.box2d.dynamics.BodyType;
 import com.almasb.fxgl.physics.box2d.dynamics.FixtureDef;
 import javafx.geometry.Point2D;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 import static bomberman.BombermanType.*;
@@ -146,6 +147,17 @@ public class BombermanFactory implements EntityFactory {
                 .build();
     }
 
+    @Spawns("wall_bomb")
+    public Entity newWallBomb(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.WALL_BOMB)
+                //.view(new Rectangle(SIZE_BLOCK, SIZE_BLOCK, Color.RED))
+                .bbox(new HitBox(new Point2D(0, 0), BoundingShape.box(SIZE_BLOCK, SIZE_BLOCK)))
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .with(new PhysicsComponent())
+                .with(new CollidableComponent(true))
+                .build();
+    }
 
     @Spawns("flame")
     public Entity newFlame(SpawnData data) {
@@ -220,6 +232,18 @@ public class BombermanFactory implements EntityFactory {
                 .bbox(hitBox)
                 .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
                 .zIndex(1)
+                .build();
+    }
+
+
+    @Spawns("balloon")
+    public Entity newBalloon(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(ENEMY)
+                .view(new Rectangle(40, 40, Color.RED))
+                .bbox(new HitBox(new Point2D(2, 2), BoundingShape.circle(radius - 2)))
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .with(new CollidableComponent(true))
                 .build();
     }
 

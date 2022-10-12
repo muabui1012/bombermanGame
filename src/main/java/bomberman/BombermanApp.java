@@ -166,7 +166,9 @@ public class BombermanApp extends GameApplication {
     private void setGrid() {
         AStarGrid grid = AStarGrid.fromWorld(getGameWorld(), 31, 15, TILE_SIZE, TILE_SIZE,
                 (type) -> {
-                    if (type == BombermanType.WALL) {
+                    if (type == BombermanType.WALL || type == BombermanType.SURROUND || type == BombermanType.BOMB
+                        || type == BombermanType.BRICK || type == BombermanType.WALL_BOMB
+                    ) {
                         return CellState.NOT_WALKABLE;
                     } else {
                         return CellState.WALKABLE;

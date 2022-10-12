@@ -1,7 +1,10 @@
 package bomberman.components;
 
+import bomberman.Constants;
 import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.pathfinding.CellMoveComponent;
+import com.almasb.fxgl.pathfinding.CellState;
+import com.almasb.fxgl.pathfinding.astar.AStarGrid;
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent;
 
 import java.awt.*;
@@ -176,8 +179,13 @@ public class PlayerComponent extends Component {
 
         Entity bomb = spawn("bomb", new SpawnData(bombX, bombY));
 
+
+
+
+
         getGameTimer().runOnceAfter(() -> {
             bomb.removeFromWorld();
+
             bomb.getComponent(BombComponent.class).explode();
         }, Duration.seconds(2.5));
 

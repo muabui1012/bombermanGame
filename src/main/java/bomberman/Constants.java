@@ -8,4 +8,6 @@ public class Constants {
 
     public static final int SPEED = 5;
 
+    public static final int ENEMY_SPEED_BASE = 70;
+
 }

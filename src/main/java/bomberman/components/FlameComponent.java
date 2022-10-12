@@ -35,7 +35,22 @@ public class FlameComponent extends Component {
             f.removeFromWorld();
         });
 
+        onCollisionBegin(BombermanType.FLAME, BombermanType.PLAYER, (f, p) -> {
+            p.removeFromWorld();
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.ENEMY, (f, e) -> {
+            double x = e.getX();
+            double y = e.getY();
+            getGameTimer().runOnceAfter(() -> {
+                e.removeFromWorld();
+            }, Duration.seconds(0.3));
+
+        });
+
+
         setCollisionBreak(BombermanType.BRICK, "brick_break");
+
 
 
         AnimationChannel animFlame = new AnimationChannel(FXGL.image("sprites.png"),
