@@ -16,6 +16,7 @@ import javafx.util.Duration;
 
 import bomberman.Constants.*;
 import bomberman.BombermanType.*;
+import bomberman.components.enemy.*;
 
 
 import static com.almasb.fxgl.dsl.FXGL.*;
@@ -70,6 +71,86 @@ public class FlameComponent extends Component {
 
         setCollisionBreak(BombermanType.ENEMY, "enemy_break");
 
+        onCollisionBegin(BombermanType.FLAME, BombermanType.BALLOOM_E, (f, b) -> {
+            double x = b.getX();
+            double y = b.getY();
+            b.getComponent(BalloomComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                b.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(0.3));
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(entity::removeFromWorld, Duration.seconds(1.5));
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.ONEAL_E, (f, o) -> {
+            double x = o.getX();
+            double y = o.getY();
+            o.getComponent(OnealComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                o.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(0.3));
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(entity::removeFromWorld, Duration.seconds(1.5));
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.DORIA_E, (f, d) -> {
+            double x = d.getX();
+            double y = d.getY();
+            d.getComponent(DoriaComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                d.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(0.3));
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(entity::removeFromWorld, Duration.seconds(1.5));
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.DAHL_E, (f, d) -> {
+            double x = d.getX();
+            double y = d.getY();
+            d.getComponent(DahlComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                d.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(0.3));
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(entity::removeFromWorld, Duration.seconds(1.5));
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.OVAPE_E, (f, o) -> {
+            double x = o.getX();
+            double y = o.getY();
+            o.getComponent(OvapeComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                o.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(0.3));
+
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(entity::removeFromWorld, Duration.seconds(1.5));
+        });
+
+        onCollisionBegin(BombermanType.FLAME, BombermanType.PASS_E, (f, pa) -> {
+            double x = pa.getX();
+            double y = pa.getY();
+            pa.getComponent(PassComponent.class).enemyDie();
+            getGameTimer().runOnceAfter(pa::removeFromWorld, Duration.seconds(0.3));
+
+            Entity entity = spawn("enemy_break", new SpawnData(x, y));
+            getGameTimer().runOnceAfter(() -> {
+                inc("enemy", -1);
+                spawn("balloom_enemy", new SpawnData(pa.getX(), pa.getY()));
+                entity.removeFromWorld();
+                set("numOfEnemy", getEnemies());
+            }, Duration.seconds(1.5));
+        });
 
 
         AnimationChannel animFlame = new AnimationChannel(FXGL.image("sprites.png"),
@@ -99,6 +180,15 @@ public class FlameComponent extends Component {
             t.removeFromWorld();
             getGameTimer().runOnceAfter(bBreak::removeFromWorld, Duration.seconds(1));
         });
+    }
+
+    private int randomInt() {
+        return (int) ((Math.random()) * 3 + 1);
+    }
+
+    private int getEnemies() {
+        return getGameWorld().getGroup(BombermanType.ONEAL_E, BombermanType.PASS_E, BombermanType.BALLOOM_E,
+                BombermanType.DAHL_E, BombermanType.DORIA_E, BombermanType.OVAPE_E).getSize();
     }
 
 }

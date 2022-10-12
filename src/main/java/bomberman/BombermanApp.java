@@ -44,6 +44,8 @@ public class BombermanApp extends GameApplication {
 
     public static final int TILE_SIZE = 48;
 
+    public static final int ENEMY_COUNT = 7;
+
     private static final int SPEED = 2;
 
     private static final int WIDTH = 31 * TILE_SIZE;
@@ -152,8 +154,10 @@ public class BombermanApp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("speed", SPEED);
-        vars.put("lives", lives);
+        vars.put("lives", 3);
         vars.put("time", 300);
+        vars.put("score", 0);
+        vars.put("enemy", ENEMY_COUNT);
 
     }
 
@@ -174,7 +178,14 @@ public class BombermanApp extends GameApplication {
     protected void initPhysics() {
         PhysicsWorld physics = getPhysicsWorld();
         physics.setGravity(0, 0);
-        onCollisionBegin(BombermanType.PLAYER, BombermanType.FLAME, (p, f) -> killPlayer());
+
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.FLAME, (p, f) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.BALLOOM_E, (p, b) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.DAHL_E, (p, dh) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.ONEAL_E, (p, o) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.DORIA_E, (p, d) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.OVAPE_E, (p, o) -> onPlayerKilled());
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.PASS_E, (p, pa) -> onPlayerKilled());
     }
 
     protected void initUI() {
@@ -182,7 +193,9 @@ public class BombermanApp extends GameApplication {
     }
 
     protected void onUpdate(double tpf) {
-
+        if (geti("enemy") <= 0){
+            showMessage("You WIN!!!", () -> getGameController().gotoMainMenu());
+        }
 
     }
 
@@ -192,25 +205,44 @@ public class BombermanApp extends GameApplication {
     }
 
     public void loadLevel() {
-        setLevelFromMap("bbm1.tmx");
+        setLevelFromMap("bbm.tmx");
         setGrid();
 
     }
 
-    public void killPlayer() {
+    public void onPlayerKilled() {
         // lives--
         if (geti("lives") > 0)
             inc("lives", -1);
 
+        if (geti("lives") <= 0) {
+            showMessage("Game over!!", () -> getGameController().gotoMainMenu());
+        }
+
         // score = 0
-        newGame = true;
-        loadLevel();
+
+
 
     }
 
 
 
+    private void setGrid() {
+        AStarGrid grid = AStarGrid.fromWorld(getGameWorld(), 31, 15, TILE_SIZE, TILE_SIZE,
+                (type) -> {
+                    if (type == BombermanType.WALL || type == BombermanType.SURROUND || type == BombermanType.BOMB
+                            || type == BombermanType.BRICK || type == BombermanType.WALL_BOMB
+                    ) {
+                        return CellState.NOT_WALKABLE;
+                    } else {
+                        return CellState.WALKABLE;
+                    }
+                });
+        set("grid", grid);
 
+
+
+    }
 
 
 

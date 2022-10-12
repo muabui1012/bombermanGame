@@ -4,7 +4,7 @@ import bomberman.components.BlockComponent;
 import bomberman.components.BombComponent;
 import bomberman.components.FlameComponent;
 import bomberman.components.PlayerComponent;
-import bomberman.components.enemy.enemy.*;
+import bomberman.components.enemy.*;
 import com.almasb.fxgl.core.util.LazyValue;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -29,6 +29,7 @@ import static bomberman.BombermanType.*;
 import static bomberman.BombermanApp.*;
 import static bomberman.components.BombComponent.*;
 import static bomberman.Constants.*;
+import static bomberman.components.enemy.G_Const.ENEMY_SPEED_BASE;
 import static com.almasb.fxgl.dsl.FXGL.entityBuilder;
 import static com.almasb.fxgl.dsl.FXGL.geto;
 
@@ -65,7 +66,7 @@ public class BombermanFactory implements EntityFactory {
 
 
 
-    @Spawns("player")
+    @Spawns("Player")
     public Entity newPlayer(SpawnData data) {
         var physics = new PhysicsComponent();
         var fixtureDef = new FixtureDef();
@@ -96,7 +97,7 @@ public class BombermanFactory implements EntityFactory {
 
     }
 
-    @Spawns("around_wall")
+    @Spawns("surround")
     public Entity newSurround(SpawnData data) {
         var width = (int) data.get("width");
         var height = (int) data.get("height");
@@ -278,7 +279,7 @@ public class BombermanFactory implements EntityFactory {
     @Spawns("balloom_enemy")
     public Entity newBalloom(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.BALLOOM_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
                 .with(new BalloomComponent())
@@ -287,11 +288,10 @@ public class BombermanFactory implements EntityFactory {
                 .build();
     }
 
-    //enemy
     @Spawns("dahl_enemy")
     public Entity newDahl(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.DAHL_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
                 .with(new DahlComponent())
@@ -303,7 +303,7 @@ public class BombermanFactory implements EntityFactory {
     @Spawns("ovape_enemy")
     public Entity newOvape(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.OVAPE_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
                 .with(new OvapeComponent())
@@ -315,7 +315,7 @@ public class BombermanFactory implements EntityFactory {
     @Spawns("oneal_enemy")
     public Entity newOneal(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.ONEAL_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .with(new CollidableComponent(true))
                 .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
@@ -329,7 +329,7 @@ public class BombermanFactory implements EntityFactory {
     @Spawns("pass_enemy")
     public Entity newPass(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.PASS_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .with(new CollidableComponent(true))
                 .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
@@ -343,7 +343,7 @@ public class BombermanFactory implements EntityFactory {
     @Spawns("doria_enemy")
     public Entity newDoria(SpawnData data) {
         return FXGL.entityBuilder(data)
-                .type(BombermanType.ENEMY)
+                .type(BombermanType.DORIA_E)
                 .bbox(new HitBox(BoundingShape.circle(radius - 2)))
                 .with(new CollidableComponent(true))
                 .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))

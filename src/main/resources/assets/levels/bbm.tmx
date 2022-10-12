@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="17" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="14" nextobjectid="643">
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="17" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="14" nextobjectid="649">
  <tileset firstgid="1" name="classic" tilewidth="48" tileheight="48" tilecount="256" columns="16">
   <image source="../../../../../../../bomberman/chepvjp/BombermanOOP/src/main/resources/assets/levels/classic.png" trans="ff00ff" width="768" height="768"/>
  </tileset>
@@ -27,6 +27,24 @@
  </objectgroup>
  <objectgroup id="13" name="Enemy">
   <object id="642" type="balloom_enemy" x="146.667" y="241.333" width="41.3333" height="44">
+   <ellipse/>
+  </object>
+  <object id="643" type="dahl_enemy" x="142.667" y="532" width="50.6667" height="48">
+   <ellipse/>
+  </object>
+  <object id="644" type="ovape_enemy" x="338.667" y="338.667" width="46.6667" height="45.3333">
+   <ellipse/>
+  </object>
+  <object id="645" type="oneal_enemy" x="622.667" y="245.333" width="48" height="42.6667">
+   <ellipse/>
+  </object>
+  <object id="646" type="pass_enemy" x="337.333" y="624" width="45.3333" height="38.6667">
+   <ellipse/>
+  </object>
+  <object id="647" type="doria_enemy" x="622.667" y="624" width="42.6667" height="38.6667">
+   <ellipse/>
+  </object>
+  <object id="648" type="balloom_enemy" x="621.333" y="152" width="41.3333" height="38.6667">
    <ellipse/>
   </object>
  </objectgroup>
@@ -157,7 +175,6 @@
  </objectgroup>
  <objectgroup id="8" name="Brick">
   <object id="613" type="brick" x="48.6667" y="237.333" width="47.3333" height="49.3333"/>
-  <object id="621" type="brick" x="142.667" y="146.667" width="45.3333" height="44"/>
   <object id="623" type="brick" x="238.667" y="242.667" width="46.6667" height="42.6667"/>
   <object id="625" type="brick" x="241.333" y="526.667" width="42.6667" height="42.6667"/>
   <object id="626" type="brick" x="432" y="526.667" width="42.6667" height="44"/>
