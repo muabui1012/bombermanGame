@@ -1,36 +1,34 @@
 package bomberman.components.enemy.enemy;
 
 
-import bomberman.BombermanType;
 import com.almasb.fxgl.texture.AnimationChannel;
+import bomberman.BombermanType;
 import javafx.util.Duration;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
-/**
- * @author kien
- */
+
 public class BalloomComponent extends BasicEnemy {
 
     public BalloomComponent() {
         super();
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.WALL,
-                (balloom, wall) -> balloom.getComponent(BalloomComponent.class).turn());
+                (b, w) -> b.getComponent(BalloomComponent.class).turn());
 
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.BOMB,
-                (balloom, bom) -> balloom.getComponent(BalloomComponent.class).turn());
+                (b, bo) -> b.getComponent(BalloomComponent.class).turn());
 
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.SURROUND,
-                (balloomb, surround) -> balloomb.getComponent(BalloomComponent.class).turn());
+                (b, w) -> b.getComponent(BalloomComponent.class).turn());
 
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.BRICK,
-                (balloom, brick) -> balloom.getComponent(BalloomComponent.class).turn());
+                (b, br) -> b.getComponent(BalloomComponent.class).turn());
 
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.GRASS,
-                (balloom, grass) -> balloom.getComponent(BalloomComponent.class).turn());
+                (b, gr) -> b.getComponent(BalloomComponent.class).turn());
 
         onCollisionBegin(BombermanType.BALLOOM_E, BombermanType.CORAL,
-                (balloom, coral) -> balloom.getComponent(BalloomComponent.class).turn());
+                (b, co) -> b.getComponent(BalloomComponent.class).turn());
 
     }
 

@@ -45,7 +45,7 @@ public class BombermanApp extends GameApplication {
 
     private static final int SPEED = 2;
 
-    private static final int WIDTH = 17 * TILE_SIZE;
+    private static final int WIDTH = 31 * TILE_SIZE;
 
     private static final int HEIGHT = 15 * TILE_SIZE;
 
@@ -191,7 +191,7 @@ public class BombermanApp extends GameApplication {
     }
 
     public void loadLevel() {
-        setLevelFromMap("bbm.tmx");
+        setLevelFromMap("bbm_level2.tmx");
         setGrid();
 
     }

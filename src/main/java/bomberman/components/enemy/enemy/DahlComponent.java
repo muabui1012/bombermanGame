@@ -22,11 +22,11 @@ public class DahlComponent extends BasicEnemy {
         onCollisionBegin(BombermanType.DAHL_E, BombermanType.BRICK,
                 (dahl, brick) -> dahl.getComponent(DahlComponent.class).turn());
 
-//        onCollisionBegin(BombermanType.DAHL_E, BombermanType.GRASS,
-//                (dahl, grass) -> dahl.getComponent(DahlComponent.class).turn());
-//
-//        onCollisionBegin(BombermanType.DAHL_E, BombermanType.CORAL,
-//                (dahl, coral) -> dahl.getComponent(DahlComponent.class).turn());
+        onCollisionBegin(BombermanType.DAHL_E, BombermanType.GRASS,
+                (dahl, grass) -> dahl.getComponent(DahlComponent.class).turn());
+
+        onCollisionBegin(BombermanType.DAHL_E, BombermanType.CORAL,
+                (dahl, coral) -> dahl.getComponent(DahlComponent.class).turn());
 
     }
 
