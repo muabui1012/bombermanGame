@@ -1,5 +1,6 @@
 package bomberman.components;
 
+import com.almasb.fxgl.entity.Spawns;
 import com.almasb.fxgl.pathfinding.CellMoveComponent;
 import com.almasb.fxgl.pathfinding.astar.AStarMoveComponent;
 
@@ -21,6 +22,8 @@ import static com.almasb.fxgl.dsl.FXGLForKtKt.getPhysicsWorld;
 import static com.almasb.fxgl.dsl.FXGL.*;
 import static bomberman.Constants.*;
 
+import bomberman.components.BombComponent.*;
+
 
 /**
  * @author nghia
@@ -31,6 +34,7 @@ public class PlayerComponent extends Component {
 
     private static final int SIZE_FRAMES = 48;
 
+    private int bombsCount = 0;
     private AnimatedTexture texture;
 
     private AnimationChannel animIdle;
@@ -159,4 +163,24 @@ public class PlayerComponent extends Component {
             statusDirection = StatusDirection.STOP;
         }
     }
+
+
+    public void placeBomb() {
+        bombsCount++;
+        int bombX = (int) (entity.getX() % SIZE_BLOCK > SIZE_BLOCK / 2
+                ? entity.getX() + SIZE_BLOCK - entity.getX() % SIZE_BLOCK + 1
+                : entity.getX() - entity.getX() % SIZE_BLOCK + 1);
+        int bombY = (int) (entity.getY() % SIZE_BLOCK > SIZE_BLOCK / 2
+                ? entity.getY() + SIZE_BLOCK - entity.getY() % SIZE_BLOCK + 1
+                : entity.getY() - entity.getY() % SIZE_BLOCK + 1);
+
+        Entity bomb = spawn("bomb", new SpawnData(bombX, bombY));
+
+        getGameTimer().runOnceAfter(() -> {
+            bomb.removeFromWorld();
+            bomb.getComponent(BombComponent.class).explode();
+        }, Duration.seconds(2.5));
+
+    }
+
 }

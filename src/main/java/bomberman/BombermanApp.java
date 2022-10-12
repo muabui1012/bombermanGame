@@ -28,6 +28,7 @@ import javafx.scene.shape.Rectangle;
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 import bomberman.components.PlayerComponent;
+import bomberman.components.BombComponent;
 
 
 /**
@@ -110,7 +111,12 @@ public class BombermanApp extends GameApplication {
             }
         }, KeyCode.S);
 
-
+        FXGL.getInput().addAction(new UserAction("Place Bomb") {
+            @Override
+            protected void onActionBegin() {
+                getPlayer().getComponent(PlayerComponent.class).placeBomb();
+            }
+        }, KeyCode.F);
 
     }
 

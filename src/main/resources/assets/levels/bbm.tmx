@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="31" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="8" nextobjectid="611">
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="31" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="10" nextobjectid="618">
  <tileset firstgid="1" name="classic" tilewidth="48" tileheight="48" tilecount="256" columns="16">
   <image source="../../../../../../../bomberman/chepvjp/BombermanOOP/src/main/resources/assets/levels/classic.png" trans="ff00ff" width="768" height="768"/>
  </tileset>
@@ -23,7 +23,6 @@
 </data>
  </layer>
  <objectgroup id="2" name="Walls">
-  <object id="75" name="Player" type="Player" x="48" y="144" width="48" height="48"/>
   <object id="333" type="wall" x="96" y="192" width="48" height="48">
    <ellipse/>
   </object>
@@ -258,11 +257,17 @@
   <object id="404" type="wall" x="1344" y="192" width="48" height="48">
    <ellipse/>
   </object>
+  <object id="615" type="Player" x="337.333" y="336" width="46.6667" height="42.6667"/>
+  <object id="616" type="brick" x="334.667" y="242.667" width="49.3333" height="45.3333"/>
+  <object id="617" type="brick" x="142.667" y="429.333" width="48" height="48"/>
  </objectgroup>
  <objectgroup id="4" name="Around Walls" locked="1">
   <object id="414" type="surround" x="0" y="96" width="48" height="624"/>
   <object id="415" type="surround" x="48" y="96" width="1392" height="48"/>
   <object id="416" type="surround" x="1440" y="96" width="48" height="624"/>
   <object id="417" type="surround" x="48" y="672" width="1392" height="48"/>
+ </objectgroup>
+ <objectgroup id="8" name="Brick">
+  <object id="613" type="brick" x="48.6667" y="237.333" width="47.3333" height="49.3333"/>
  </objectgroup>
 </map>
