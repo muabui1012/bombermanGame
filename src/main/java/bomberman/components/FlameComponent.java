@@ -1,5 +1,6 @@
 package bomberman.components;
 
+import bomberman.BombermanApp;
 import bomberman.BombermanType;
 import bomberman.Constants;
 import com.almasb.fxgl.dsl.FXGL;
@@ -15,6 +16,7 @@ import javafx.util.Duration;
 
 import bomberman.Constants.*;
 import bomberman.BombermanType.*;
+
 
 import static com.almasb.fxgl.dsl.FXGL.*;
 
@@ -37,6 +39,7 @@ public class FlameComponent extends Component {
 
         onCollisionBegin(BombermanType.FLAME, BombermanType.PLAYER, (f, p) -> {
             p.removeFromWorld();
+
         });
 
         onCollisionBegin(BombermanType.FLAME, BombermanType.ENEMY, (f, e) -> {
