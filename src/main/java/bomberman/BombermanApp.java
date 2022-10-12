@@ -4,6 +4,7 @@ package bomberman;
 
 import bomberman.menus.BombermanGameMenu;
 import bomberman.menus.BombermanMenu;
+import bomberman.ui.BombermanHUD;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.FXGLMenu;
@@ -158,7 +159,8 @@ public class BombermanApp extends GameApplication {
         vars.put("time", 300);
         vars.put("score", 0);
         vars.put("enemy", ENEMY_COUNT);
-
+        vars.put("level", 1);
+        vars.put("bomb", 100);
     }
 
     @Override
@@ -188,7 +190,12 @@ public class BombermanApp extends GameApplication {
         onCollisionBegin(BombermanType.PLAYER, BombermanType.PASS_E, (p, pa) -> onPlayerKilled());
     }
 
+    @Override
     protected void initUI() {
+        var hud = new BombermanHUD();
+        var leftMargin = 0;
+        var topMargin = 0;
+        getGameTimer().runOnceAfter(() -> FXGL.addUINode(hud.getHUD(), leftMargin, topMargin), Duration.seconds(3));
 
     }
 
