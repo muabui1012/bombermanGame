@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="17" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="14" nextobjectid="642">
+<map version="1.8" tiledversion="1.8.6" orientation="orthogonal" renderorder="right-down" width="17" height="15" tilewidth="48" tileheight="48" infinite="0" nextlayerid="14" nextobjectid="643">
  <tileset firstgid="1" name="classic" tilewidth="48" tileheight="48" tilecount="256" columns="16">
   <image source="../../../../../../../bomberman/chepvjp/BombermanOOP/src/main/resources/assets/levels/classic.png" trans="ff00ff" width="768" height="768"/>
  </tileset>
@@ -26,25 +26,7 @@
   <object id="629" type="Player" x="53.3333" y="149.333" width="37.3333" height="40"/>
  </objectgroup>
  <objectgroup id="13" name="Enemy">
-  <object id="631" type="doria_enemy" x="144" y="337.333" width="52" height="50.6667">
-   <ellipse/>
-  </object>
-  <object id="639" type="balloom_enemy" x="242.667" y="436" width="45.3333" height="45.3333">
-   <ellipse/>
-  </object>
-  <object id="638" type="pass_enemy" x="58.6667" y="534.667" width="40" height="36">
-   <ellipse/>
-  </object>
-  <object id="637" type="oneal_enemy" x="241.333" y="626.667" width="42.6667" height="41.3333">
-   <ellipse/>
-  </object>
-  <object id="636" type="ovape_enemy" x="430.667" y="433.333" width="45.3333" height="45.3333">
-   <ellipse/>
-  </object>
-  <object id="635" type="dahl_enemy" x="625.333" y="148" width="45.3333" height="45.3333">
-   <ellipse/>
-  </object>
-  <object id="633" type="balloom_enemy" x="334.667" y="148" width="46.6667" height="46.6667">
+  <object id="642" type="balloom_enemy" x="146.667" y="241.333" width="41.3333" height="44">
    <ellipse/>
   </object>
  </objectgroup>

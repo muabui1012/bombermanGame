@@ -5,15 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/atlantis_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm_level2.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm_level3.tmx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/forest_48.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm1.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BalloomComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BalloomComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DahlComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DahlComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/BalloonComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BalloomComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BasicEnemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DahlComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DoriaComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/Enemy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/G_Const.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/OnealComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/OvapeComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/PassComponent.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm_level1.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm_level1.tmx" afterDir="false" />
     </list>
@@ -41,17 +47,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/OOP/game/src/main/resources/assets/levels",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OOP/game/src/main/resources/assets/levels&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OOP\game\src\main\resources\assets\levels" />

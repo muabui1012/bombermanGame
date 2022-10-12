@@ -28,6 +28,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 
+import static bomberman.Constants.SIZE_BLOCK;
 import static com.almasb.fxgl.dsl.FXGL.*;
 import bomberman.components.PlayerComponent;
 import bomberman.components.BombComponent;
@@ -191,7 +192,7 @@ public class BombermanApp extends GameApplication {
     }
 
     public void loadLevel() {
-        setLevelFromMap("bbm_level2.tmx");
+        setLevelFromMap("bbm1.tmx");
         setGrid();
 
     }
@@ -207,30 +208,10 @@ public class BombermanApp extends GameApplication {
 
     }
 
-    private void setGrid() {
-        AStarGrid grid = AStarGrid.fromWorld(getGameWorld(), 31, 15, TILE_SIZE, TILE_SIZE,
-                (type) -> {
-                    if (type == BombermanType.WALL || type == BombermanType.SURROUND || type == BombermanType.BOMB
-                        || type == BombermanType.BRICK || type == BombermanType.WALL_BOMB
-                    ) {
-                        return CellState.NOT_WALKABLE;
-                    } else {
-                        return CellState.WALKABLE;
-                    }
-                });
-        set("grid", grid);
-        AStarGrid _grid = AStarGrid.fromWorld(getGameWorld(), 31, 15,
-                TILE_SIZE, TILE_SIZE, (type) -> {
-                    if (type == BombermanType.SURROUND || type == BombermanType.WALL) {
-                        return CellState.NOT_WALKABLE;
-                    } else {
-                        return CellState.WALKABLE;
-                    }
-                });
-        set("_grid", _grid);
 
 
-    }
+
+
 
 
     public static void main(String[] args) {

@@ -65,7 +65,7 @@ public class BombermanFactory implements EntityFactory {
 
 
 
-    @Spawns("Player")
+    @Spawns("player")
     public Entity newPlayer(SpawnData data) {
         var physics = new PhysicsComponent();
         var fixtureDef = new FixtureDef();
@@ -96,7 +96,7 @@ public class BombermanFactory implements EntityFactory {
 
     }
 
-    @Spawns("surround")
+    @Spawns("around_wall")
     public Entity newSurround(SpawnData data) {
         var width = (int) data.get("width");
         var height = (int) data.get("height");
