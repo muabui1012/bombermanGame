@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/BalloomComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/BasicEnemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/DahlComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/DoriaComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/G_Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/OnealComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/OvapeComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/PassComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

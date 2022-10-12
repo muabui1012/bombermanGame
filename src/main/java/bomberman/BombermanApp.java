@@ -48,7 +48,7 @@ public class BombermanApp extends GameApplication {
 
     private static final int SPEED = 2;
 
-    private static final int WIDTH = 31 * TILE_SIZE;
+    private static final int WIDTH = 17 * TILE_SIZE;
 
     private static final int HEIGHT = 15 * TILE_SIZE;
 
@@ -154,7 +154,7 @@ public class BombermanApp extends GameApplication {
     @Override
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("speed", SPEED);
-        vars.put("lives", 3);
+        vars.put("lives", 1);
         vars.put("time", 300);
         vars.put("score", 0);
         vars.put("enemy", ENEMY_COUNT);
@@ -239,7 +239,17 @@ public class BombermanApp extends GameApplication {
                     }
                 });
         set("grid", grid);
+        AStarGrid _grid = AStarGrid.fromWorld(getGameWorld(), 31, 15,
+                SIZE_BLOCK, SIZE_BLOCK, (type) -> {
+                    if (type == BombermanType.SURROUND || type == BombermanType.WALL) {
+                        return CellState.NOT_WALKABLE;
+                    } else {
+                        return CellState.WALKABLE;
+                    }
+                });
 
+
+        set("_grid", _grid);
 
 
     }
