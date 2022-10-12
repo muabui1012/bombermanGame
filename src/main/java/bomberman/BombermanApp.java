@@ -2,6 +2,8 @@ package bomberman;
 
 
 
+import bomberman.menus.BombermanGameMenu;
+import bomberman.menus.BombermanMenu;
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
 import com.almasb.fxgl.app.scene.FXGLMenu;
@@ -30,6 +32,7 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 import bomberman.components.PlayerComponent;
 import bomberman.components.BombComponent;
 import javafx.util.Duration;
+import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -50,6 +53,8 @@ public class BombermanApp extends GameApplication {
 
     private static final String VERSION = "1.0";
 
+    public static boolean isSoundEnabled = true;
+
     private boolean newGame = false;
 
     private static final int lives = 2;
@@ -61,7 +66,20 @@ public class BombermanApp extends GameApplication {
         settings.setWidth(WIDTH);
         settings.setHeight(HEIGHT);
         settings.setIntroEnabled(false);
-        settings.setMainMenuEnabled(false);
+        settings.setMainMenuEnabled(true);
+        settings.setSceneFactory(new SceneFactory() {
+            @NotNull
+            @Override
+            public FXGLMenu newMainMenu() {
+                return new BombermanMenu();
+            }
+
+            @NotNull
+            @Override
+            public FXGLMenu newGameMenu() {
+                return new BombermanGameMenu();
+            }
+        });
 
     }
 
@@ -134,6 +152,7 @@ public class BombermanApp extends GameApplication {
     protected void initGameVars(Map<String, Object> vars) {
         vars.put("speed", SPEED);
         vars.put("lives", lives);
+        vars.put("time", 300);
 
     }
 
@@ -162,16 +181,7 @@ public class BombermanApp extends GameApplication {
     }
 
     protected void onUpdate(double tpf) {
-        if (newGame) {
-            newGame = false;
-            getGameTimer().runOnceAfter(() -> getGameScene().getViewport().fade(() -> {
-                if (geti("lives") <= 0) {
-                    showMessage("Game Over leu leu!!!");
-                }
-                loadLevel();
 
-            }), Duration.seconds(0.5));
-        }
 
     }
 
@@ -209,7 +219,15 @@ public class BombermanApp extends GameApplication {
                     }
                 });
         set("grid", grid);
-
+        AStarGrid _grid = AStarGrid.fromWorld(getGameWorld(), 31, 15,
+                TILE_SIZE, TILE_SIZE, (type) -> {
+                    if (type == BombermanType.SURROUND || type == BombermanType.WALL) {
+                        return CellState.NOT_WALKABLE;
+                    } else {
+                        return CellState.WALKABLE;
+                    }
+                });
+        set("_grid", _grid);
 
 
     }

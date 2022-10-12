@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BalloomComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/BasicEnemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DahlComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/DoriaComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/Enemy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/G_Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/OnealComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/OvapeComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/enemy/enemy/PassComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/menus/BombermanGameMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/menus/BombermanMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bomberman/menus/MenuButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/background_demo_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/PlayerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/PlayerComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +55,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/bomberman/check/bombermanGame",
+    "last_opened_file_path": "D:/OOP/game/src/main/java/bomberman/components/enemy",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -48,8 +63,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OOP\game\src\main\resources\assets\levels" />
+      <recent name="D:\OOP\game\src\main\java\bomberman\components\enemy" />
       <recent name="D:\OOP\game\src\main\resources\assets\textures" />
+      <recent name="D:\OOP\game\src\main\java\bomberman" />
+      <recent name="D:\OOP\game\src\main\resources\assets\levels" />
       <recent name="D:\OOP\game\src\main\resources\assets" />
     </key>
   </component>

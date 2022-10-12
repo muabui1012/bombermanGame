@@ -5,6 +5,7 @@ package bomberman;
  */
 public enum BombermanType {
     PLAYER,
+    PLAYER_BREAK,
     WALL,
     WALL_BOMB,
     SURROUND,
@@ -14,6 +15,7 @@ public enum BombermanType {
     POWERUP,
     BOMB,
     FLAME,
-    ENEMY
+    ENEMY,
+    PASS_E, BALLOOM_E, DAHL_E, OVAPE_E, ONEAL_E, GRASS, CORAL, DORIA_E
 
 }

@@ -26,6 +26,10 @@ import static com.almasb.fxgl.dsl.FXGL.*;
 public class FlameComponent extends Component {
     private final AnimatedTexture texture;
 
+    private static Entity getPlayer() {
+        return FXGL.getGameWorld().getSingleton(BombermanType.PLAYER);
+    }
+
     public FlameComponent(int startFrame, int endFrame) {
         PhysicsWorld physics = FXGL.getPhysicsWorld();
 
@@ -38,6 +42,8 @@ public class FlameComponent extends Component {
         });
 
         onCollisionBegin(BombermanType.FLAME, BombermanType.PLAYER, (f, p) -> {
+            getPlayer().getComponent(PlayerComponent.class).die();
+            showMessage("Game over!!", () -> getGameController().gotoMainMenu());
             p.removeFromWorld();
 
         });
@@ -47,12 +53,22 @@ public class FlameComponent extends Component {
             double y = e.getY();
             getGameTimer().runOnceAfter(() -> {
                 e.removeFromWorld();
+
+                getGameTimer().runOnceAfter(() -> {
+                    Entity en = spawn("player_break");
+                    en.removeFromWorld();
+
+                }, Duration.seconds(2));
+
             }, Duration.seconds(0.3));
+
 
         });
 
 
         setCollisionBreak(BombermanType.BRICK, "brick_break");
+
+        setCollisionBreak(BombermanType.ENEMY, "enemy_break");
 
 
 

@@ -4,6 +4,7 @@ import bomberman.components.BlockComponent;
 import bomberman.components.BombComponent;
 import bomberman.components.FlameComponent;
 import bomberman.components.PlayerComponent;
+import bomberman.components.enemy.enemy.*;
 import com.almasb.fxgl.core.util.LazyValue;
 import com.almasb.fxgl.dsl.FXGL;
 import com.almasb.fxgl.entity.Entity;
@@ -240,14 +241,116 @@ public class BombermanFactory implements EntityFactory {
     }
 
 
-    @Spawns("balloon")
-    public Entity newBalloon(SpawnData data) {
+    @Spawns("enemy_break")
+    public Entity newEnemyBreak(SpawnData data) {
+        var boundingShape = BoundingShape.box(
+                SIZE_BLOCK / 2.0f - 3,
+                SIZE_BLOCK / 2.0f - 3);
+
+        var hitBox = new HitBox(boundingShape);
+
         return FXGL.entityBuilder(data)
-                .type(ENEMY)
-                .view(new Rectangle(40, 40, Color.RED))
-                .bbox(new HitBox(new Point2D(2, 2), BoundingShape.circle(radius - 2)))
+                .type(BRICK_BREAK)
+                .with(new BlockComponent(75, 77, 1))
+                .bbox(hitBox)
                 .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .zIndex(1)
+                .build();
+    }
+
+    @Spawns("player_break")
+    public Entity newPlayerBreak(SpawnData data) {
+        var boundingShape = BoundingShape.box(
+                SIZE_BLOCK / 2.0f - 3,
+                SIZE_BLOCK / 2.0f - 3);
+
+        var hitBox = new HitBox(boundingShape);
+
+        return FXGL.entityBuilder(data)
+                .type(PLAYER_BREAK)
+                .with(new BlockComponent(12, 14, 21))
+                .bbox(hitBox)
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .zIndex(1)
+                .build();
+    }
+
+    @Spawns("balloom_enemy")
+    public Entity newBalloom(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .with(new BalloomComponent())
                 .with(new CollidableComponent(true))
+                .zIndex(2)
+                .build();
+    }
+
+    //enemy
+    @Spawns("dahl_enemy")
+    public Entity newDahl(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .with(new DahlComponent())
+                .with(new CollidableComponent(true))
+                .zIndex(2)
+                .build();
+    }
+
+    @Spawns("ovape_enemy")
+    public Entity newOvape(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .atAnchored(new Point2D(0, 0), new Point2D(data.getX(), data.getY()))
+                .with(new OvapeComponent())
+                .with(new CollidableComponent(true))
+                .zIndex(2)
+                .build();
+    }
+
+    @Spawns("oneal_enemy")
+    public Entity newOneal(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .with(new CollidableComponent(true))
+                .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
+                .with(new CellMoveComponent(SIZE_BLOCK, SIZE_BLOCK, ENEMY_SPEED_BASE))
+                .with(new AStarMoveComponent(new LazyValue<>(() -> geto("grid"))))
+                .with(new OnealComponent())
+                .zIndex(2)
+                .build();
+    }
+
+    @Spawns("pass_enemy")
+    public Entity newPass(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .with(new CollidableComponent(true))
+                .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
+                .with(new CellMoveComponent(SIZE_BLOCK, SIZE_BLOCK, ENEMY_SPEED_BASE))
+                .with(new AStarMoveComponent(new LazyValue<>(() -> geto("grid"))))
+                .with(new PassComponent())
+                .zIndex(2)
+                .build();
+    }
+
+    @Spawns("doria_enemy")
+    public Entity newDoria(SpawnData data) {
+        return FXGL.entityBuilder(data)
+                .type(BombermanType.ENEMY)
+                .bbox(new HitBox(BoundingShape.circle(radius - 2)))
+                .with(new CollidableComponent(true))
+                .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
+                .with(new CellMoveComponent(SIZE_BLOCK, SIZE_BLOCK, ENEMY_SPEED_BASE + 20))
+                .with(new AStarMoveComponent(new LazyValue<>(() -> geto("_grid"))))
+                .with(new DoriaComponent())
+                .zIndex(2)
                 .build();
     }
 

@@ -38,6 +38,8 @@ public class PlayerComponent extends Component {
 
     private static final int SIZE_FRAMES = 48;
 
+    private boolean exploreCancel = false;
+
     private int bombsCount = 0;
     private AnimatedTexture texture;
 
@@ -54,6 +56,9 @@ public class PlayerComponent extends Component {
     public PlayerComponent() {
         PhysicsWorld physics = FXGL.getPhysicsWorld();
         physics.setGravity(0, 0);
+
+        animDie = new AnimationChannel(image("sprites.png"), 16, SIZE_FRAMES, SIZE_FRAMES,
+                Duration.seconds(1.5), 12, 14);
 
         animIdleDown = new AnimationChannel(image("sprites.png"), 16, SIZE_FRAMES, SIZE_FRAMES,
                 Duration.seconds(ANIM_TIME), 3, 3);
@@ -133,6 +138,9 @@ public class PlayerComponent extends Component {
                     texture.loopNoOverride(animIdleRight);
                 }
                 break;
+            case DIE:
+                texture.loopNoOverride(animDie);
+                break;
 
         }
 
@@ -168,6 +176,9 @@ public class PlayerComponent extends Component {
         }
     }
 
+    public void die() {
+        statusDirection = StatusDirection.DIE;
+    }
 
     public void placeBomb() {
         bombsCount++;
@@ -190,6 +201,14 @@ public class PlayerComponent extends Component {
             bomb.getComponent(BombComponent.class).explode();
         }, Duration.seconds(2.5));
 
+    }
+
+    public boolean isExploreCancel() {
+        return exploreCancel;
+    }
+
+    public void setExploreCancel(boolean exploreCancel) {
+        this.exploreCancel = exploreCancel;
     }
 
 }
