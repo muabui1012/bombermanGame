@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/menus/BombermanGameMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/menus/BombermanGameMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/ui/BombermanHUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/ui/BombermanHUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

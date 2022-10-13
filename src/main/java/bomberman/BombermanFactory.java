@@ -39,7 +39,7 @@ import static com.almasb.fxgl.dsl.FXGL.geto;
  */
 public class BombermanFactory implements EntityFactory {
 
-    private final int radius = SIZE_BLOCK/2;
+    private final int radius = SIZE_BLOCK/2 - 5;
 
     @Spawns("block")
     public Entity newBlock(SpawnData data) {
