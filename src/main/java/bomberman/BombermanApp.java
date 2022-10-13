@@ -141,7 +141,7 @@ public class BombermanApp extends GameApplication {
             protected void onActionBegin() {
                 getPlayer().getComponent(PlayerComponent.class).placeBomb();
             }
-        }, KeyCode.F);
+        }, KeyCode.SPACE);
 
     }
 
@@ -167,7 +167,11 @@ public class BombermanApp extends GameApplication {
 
         getInput().setProcessInput(true);
 
+
+
         loadLevel();
+
+        Entity background = spawn("BG");
 
         CountDown();
 
@@ -211,7 +215,7 @@ public class BombermanApp extends GameApplication {
     }
 
     public void loadLevel() {
-        setLevelFromMap("bbm.tmx");
+        setLevelFromMap("bbm_new.tmx");
         setGrid();
 
     }

@@ -39,7 +39,7 @@ import static com.almasb.fxgl.dsl.FXGL.geto;
  */
 public class BombermanFactory implements EntityFactory {
 
-    private final int radius = SIZE_BLOCK/2 - 5;
+    private final int radius = SIZE_BLOCK/2 - 1;
 
     @Spawns("block")
     public Entity newBlock(SpawnData data) {
@@ -59,7 +59,7 @@ public class BombermanFactory implements EntityFactory {
     public Entity newBackground(SpawnData data) {
         return FXGL.entityBuilder(data)
                 .at(0, 0)
-                .view(new Rectangle(9*48,9*48, Color.LIGHTGRAY))
+                .view(new Rectangle(31*48,15*48, Color.LIGHTBLUE))
                 .zIndex(-10)
                 .build();
     }
@@ -82,7 +82,7 @@ public class BombermanFactory implements EntityFactory {
 
         return FXGL.entityBuilder(data)
                 .type(PLAYER)
-                .bbox(new HitBox(BoundingShape.circle(radius - 3)))
+                .bbox(new HitBox(BoundingShape.circle(radius)))
                 .atAnchored(new Point2D(radius, radius), new Point2D(radius, radius))
                 .with(new CellMoveComponent(SIZE_BLOCK, SIZE_BLOCK, SPEED))
                 .with(physics)

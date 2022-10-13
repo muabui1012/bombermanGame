@@ -122,12 +122,15 @@ public abstract class BasicEnemy extends Component {
         if (dx < 0) {
             setTurnEnemy(TurnDirection.BLOCK_LEFT);
         }
+        else
         if (dx > 0) {
             setTurnEnemy(TurnDirection.BLOCK_RIGHT);
         }
+        else
         if (dy < 0) {
             setTurnEnemy(TurnDirection.BLOCK_UP);
         }
+        else
         if (dy > 0) {
             setTurnEnemy(TurnDirection.BLOCK_DOWN);
         }
