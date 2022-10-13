@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0bbb5b46-e3da-49c2-abb6-f9aee913c1b3" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/powerup_bombs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/textures/powerup_speed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/BombermanType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/BombermanType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/FlameComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bomberman/components/PlayerComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bomberman/components/PlayerComponent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/levels/bbm.tmx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,17 +33,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/OOP/game/src/main/resources/assets/textures",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OOP/game/src/main/resources/assets/textures&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OOP\game\src\main\resources\assets\textures" />
