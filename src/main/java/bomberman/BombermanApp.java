@@ -59,8 +59,6 @@ public class BombermanApp extends GameApplication {
 
     public static boolean isSoundEnabled = true;
 
-    private boolean newGame = false;
-
     private static final int lives = 2;
 
     @Override

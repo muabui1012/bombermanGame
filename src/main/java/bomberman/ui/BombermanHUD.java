@@ -42,7 +42,7 @@ public class BombermanHUD implements HUD {
                 createSpacer(),
                 setTextUI("lives", "LIFE %d"),
                 createSpacer(),
-                setTextUI("enemy", "E %d")
+                setTextUI("enemy", "ENEMY %d")
         );
         row.setAlignment(Pos.CENTER_LEFT);
         row.prefWidthProperty().bind(FXGL.getSettings().actualWidthProperty());

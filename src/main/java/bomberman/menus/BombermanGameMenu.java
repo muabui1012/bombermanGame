@@ -26,14 +26,14 @@ public class BombermanGameMenu extends FXGLMenu
 {
 public BombermanGameMenu() {
         super(MenuType.GAME_MENU);
-        Shape shape = new Rectangle(48 * 31, 48 * 15, Color.DARKBLUE);
+        Shape shape = new Rectangle(48 * 17, 48 * 15, Color.DARKBLUE);
         shape.setOpacity(0.5);
         getContentRoot().getChildren().add(shape);
 
         // UI background
         ImageView iv1 = new ImageView();
         iv1.setImage(new Image("assets/textures/background_demo_1.png"));
-        iv1.setX(48 * 31 / 2.0 - 520 / 2.0);
+        iv1.setX(48 * 17 / 2.0 - 520 / 2.0);
         iv1.setY(100);
         iv1.setEffect(new DropShadow(5, 3.5, 3.5, Color.WHITE));
         iv1.setEffect(new Lighting());
