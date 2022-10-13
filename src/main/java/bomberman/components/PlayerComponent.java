@@ -57,6 +57,22 @@ public class PlayerComponent extends Component {
         PhysicsWorld physics = FXGL.getPhysicsWorld();
         physics.setGravity(0, 0);
 
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.SPEEDUP, (p, speed_i) -> {
+            speed_i.removeFromWorld();
+            inc("speed", SPEED / 3);
+            speed = geti("speed");
+            getGameTimer().runOnceAfter(() -> {
+                inc("speed", -SPEED / 3);
+                speed = geti("speed");
+            }, Duration.seconds(8));
+        });
+
+
+        onCollisionBegin(BombermanType.PLAYER, BombermanType.POWERUP, (p, bombs_t) -> {
+            bombs_t.removeFromWorld();
+            inc("bomb", 1);
+        });
+
         animDie = new AnimationChannel(image("sprites.png"), 16, SIZE_FRAMES, SIZE_FRAMES,
                 Duration.seconds(1.5), 12, 14);
 
@@ -150,23 +166,27 @@ public class PlayerComponent extends Component {
 
     public void moveRight() {
         statusDirection = StatusDirection.RIGHT;
+        speed = geti("speed") * SIZE_BLOCK;
         physics.setVelocityX(speed);
 
     }
 
     public void moveLeft() {
         statusDirection = StatusDirection.LEFT;
+        speed = geti("speed") * SIZE_BLOCK;
         physics.setVelocityX(-speed);
     }
 
 
     public void moveUp() {
         statusDirection = StatusDirection.UP;
+        speed = geti("speed") * SIZE_BLOCK;
         physics.setVelocityY(-speed);
     }
 
     public void moveDown() {
         statusDirection = StatusDirection.DOWN;
+        speed = geti("speed") * SIZE_BLOCK;
         physics.setVelocityY(speed);
     }
 
@@ -181,7 +201,12 @@ public class PlayerComponent extends Component {
     }
 
     public void placeBomb() {
-        bombsCount++;
+        bombsCount = geti("bomb");
+        if (bombsCount == 0) {
+            return;
+        }
+        bombsCount--;
+        inc("bomb", -1);
         int bombX = (int) (entity.getX() % SIZE_BLOCK > SIZE_BLOCK / 2
                 ? entity.getX() + SIZE_BLOCK - entity.getX() % SIZE_BLOCK + 1
                 : entity.getX() - entity.getX() % SIZE_BLOCK + 1);
@@ -197,7 +222,8 @@ public class PlayerComponent extends Component {
 
         getGameTimer().runOnceAfter(() -> {
             bomb.removeFromWorld();
-
+            bombsCount++;
+            inc("bomb", 1);
             bomb.getComponent(BombComponent.class).explode();
         }, Duration.seconds(2.5));
 

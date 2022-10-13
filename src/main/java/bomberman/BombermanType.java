@@ -13,6 +13,7 @@ public enum BombermanType {
     BRICK,
     BRICK_BREAK,
     POWERUP,
+    SPEEDUP,
     BOMB,
     FLAME,
     ENEMY,

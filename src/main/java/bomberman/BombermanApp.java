@@ -45,7 +45,7 @@ public class BombermanApp extends GameApplication {
 
     public static final int TILE_SIZE = 48;
 
-    public static final int ENEMY_COUNT = 7;
+    public static final int ENEMY_COUNT = 6;
 
     private static final int SPEED = 2;
 
@@ -160,7 +160,7 @@ public class BombermanApp extends GameApplication {
         vars.put("score", 0);
         vars.put("enemy", ENEMY_COUNT);
         vars.put("level", 1);
-        vars.put("bomb", 100);
+        vars.put("bomb", 1);
     }
 
     @Override
@@ -171,8 +171,9 @@ public class BombermanApp extends GameApplication {
 
         loadLevel();
 
+        CountDown();
 
-
+        getWorldProperties().<Integer>addListener("time", this::timeUp);
 
     }
 
@@ -261,7 +262,16 @@ public class BombermanApp extends GameApplication {
 
     }
 
+    private void CountDown() {
+        run(() -> inc("time", -1), Duration.seconds(1));
+    }
 
+
+    private void timeUp(int backup, int now){
+        if (now == 0) {
+            onPlayerKilled();
+        }
+    }
 
     public static void main(String[] args) {
         launch((args));
