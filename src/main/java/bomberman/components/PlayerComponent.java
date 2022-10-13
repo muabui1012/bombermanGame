@@ -60,11 +60,8 @@ public class PlayerComponent extends Component {
         onCollisionBegin(BombermanType.PLAYER, BombermanType.SPEEDUP, (p, speed_i) -> {
             speed_i.removeFromWorld();
             inc("speed", SPEED / 3);
-            speed = geti("speed");
-            getGameTimer().runOnceAfter(() -> {
-                inc("speed", -SPEED / 3);
-                speed = geti("speed");
-            }, Duration.seconds(8));
+
+
         });
 
 
